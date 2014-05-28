@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: false
+  email: false
+  people: MyString
+  allday: false
+  start: 2014-05-27 23:44:35
+  end: 2014-05-27 23:44:35
+
+two:
+  phone: false
+  email: false
+  people: MyString
+  allday: false
+  start: 2014-05-27 23:44:35
+  end: 2014-05-27 23:44:35
