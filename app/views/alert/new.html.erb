@@ -1,0 +1,25 @@
+<h1>New security check</h1>
+
+<%= form_for @alert do |a| %>
+  
+  <%= a.label :phone %>
+  <%= a.check_box(:phone) %>
+
+  <%= a.label :email %>
+  <%= a.check_box(:email) %>
+
+  <%= a.select(:people, options_for_select([['None', 1], ['One', 2], ['Multiple', 3]])) %>
+
+
+  <%= a.submit %>
+
+
+<!--    t.boolean  "phone"
+        t.boolean  "email"
+        t.string   "people"
+        t.boolean  "allday"
+        t.time     "start"
+        t.time     "end"        -->
+
+
+<% end %>
