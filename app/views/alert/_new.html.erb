@@ -1,0 +1,33 @@
+<h2>Set security camera alert options</h2>
+
+<%= form_for :alert, url: alert_path do |a| %>
+  <%= a.label "How would you like to recieve your alerts?" %>
+</br>
+  <%= a.label :phone %>
+  <%= a.check_box(:phone) %>
+
+  <%= a.label :email %>
+  <%= a.check_box(:email) %>
+</br>
+  <%= a.label "Alert me if " %>
+  <%= a.select(:people, options_for_select([['more than one person detected', 1], ['2+ people detected', 2], ['any activity', 3]])) %>
+</br>
+  <%= a.label "Optional time of day to monitor (will default to 2 hour period if both times are not specified):" %>
+</br>
+  <%= a.label "start time"  %>
+  <%= a.time_field :start %>
+  <%= a.label "until"  %>
+  <%= a.time_field :end %>
+</br>
+  <%= a.submit "Save optional settings" %>
+
+
+<!--    t.boolean  "phone"
+        t.boolean  "email"
+        t.string   "people"
+        t.boolean  "allday"
+        t.time     "start"
+        t.time     "end"        -->
+
+
+<% end %>
