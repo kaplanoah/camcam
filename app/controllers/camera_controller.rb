@@ -6,9 +6,8 @@ require 'nexmo'
 
     from = '16316141575'
     to = '12023227067'
-    message = 'Text message success!'
+    message = 'More than one person! Visit '
     response = NEXMO.send_message({:to => to, :from => from, :text => message})
-    binding.pry
     # url = 'https://rest.nexmo.com/sms/json?api_key=' + key + '&api_secret=' + secret + '&from=' + from + '&to=' + to + '&text=' + message
     # response = open(url).read
     respond_to do |f|

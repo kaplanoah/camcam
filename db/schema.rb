@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140528121104) do
   enable_extension "plpgsql"
 
   create_table "alerts", force: true do |t|
+    t.integer  "user_id"
     t.boolean  "phone"
     t.boolean  "email"
     t.string   "people"
