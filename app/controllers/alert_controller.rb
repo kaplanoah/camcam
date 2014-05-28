@@ -13,8 +13,13 @@ class AlertController < ApplicationController
     else
       advanced_settings[:allday] = false
     end
-    
-    Alert.create(advanced_settings)
+    if Alert.find_by(user_id: current_user.id).nil?
+      advanced_settings[:user_id] = current_user.id
+      Alert.create(advanced_settings)
+    else
+      alert = Alert.find_by(user_id: current_user.id)
+      alert.update_attributes(advanced_settings)
+    end
     redirect_to dashboard_path
   end
 
