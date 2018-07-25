@@ -6,3 +6,11 @@
     text-align: center;
     margin-bottom: 25px;
 }
+
+#alert-settings h2 {
+    margin-bottom: 25px;
+}
+
+#alert-settings .form-group {
+    margin-bottom: 25px;
+}

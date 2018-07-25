@@ -2,37 +2,34 @@
 
 <%= form_for :alert, url: alert_path do |a| %>
 
-  <%= a.label "How would you like to recieve your alerts?" %>
-  </br>
-  <%= a.label :phone %>
-  <%= a.check_box(:phone) %>
+  <div class="form-group">
+    <%= a.label "How would you like to recieve your alerts?" %><br>
 
-  <%= a.label :email %>
-  <%= a.check_box(:email) %>
-  </br>
+    <div class="checkbox">
+      <label>
+        <%= a.check_box(:phone) %> Phone
+      </label>
+    </div>
 
-  <%= a.label "Alert me if " %>
-  <%= a.select(:people, options_for_select([['more than one person detected', 1], ['2+ people detected', 2], ['any activity', 3]])) %>
-  </br>
+    <div class="checkbox">
+      <label>
+        <%= a.check_box(:email) %> Email
+      </label>
+    </div>
+  </div>
 
-  <%= a.label "Optional time of day to monitor (will default to 2 hour period if both times are not specified):" %>
-  </br>
+  <div class="form-group form-inline">
+    <%= a.label "Alert me if " %>
+    <%= a.select(:people, options_for_select([['more than one person detected', 1], ['2+ people detected', 2], ['any activity', 3]]), {}, {class: "form-control"}) %>
+  </div>
 
-  <%= a.label "start time"  %>
-  <%= a.time_field :start %>
-  <%= a.label "until"  %>
-  <%= a.time_field :end %>
-  </br>
+  <div class="form-group form-inline">
+    <%= a.label "Optional time of day to monitor (will default to 2 hour period if both times are not specified):" %><br>
+
+    Start time <%= a.time_field :start, class: "form-control" %>
+    until <%= a.time_field :end, class: "form-control" %>
+  </div>
 
   <%= a.submit "Save optional settings", :class => "btn btn-primary" %>
-
-  <!--
-  t.boolean  "phone"
-  t.boolean  "email"
-  t.string   "people"
-  t.boolean  "allday"
-  t.time     "start"
-  t.time     "end"
-  -->
 
 <% end %>
