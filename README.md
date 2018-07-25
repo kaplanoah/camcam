@@ -20,7 +20,7 @@ Requires Ruby and Rails.
 
 Clone the repository.
 
-In terminal, navigate to the application's directory and run:
+Then in terminal, navigate to the application's directory and run:
 
 ```
 bundle install

@@ -2,6 +2,7 @@
   max-width: 100%;
 }
 
-#mainDashboard {
-  height: 250px;
+#main-dashboard h1 {
+    text-align: center;
+    margin-bottom: 25px;
 }
